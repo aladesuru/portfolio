@@ -97,8 +97,53 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+*
+{
+  box-sizing: border-box;
+}
 
+body
+{
+  font-size: 100%;
+  font-family: sans-serif , verdana;
+  padding: 0;
+}
 
+img
+{
+  max-width: 100%;
+}
+
+header,
+footer,
+section
+{
+  padding: 0px 1%;
+}
+
+ul
+{
+  margin: 0;
+  padding: 0 1%;
+}
+
+.hero-area
+{
+  background: linear-gradient(rgba(0,0,0,.8) , rgba(0,0,0,.5) , transparent ),
+              url("../img/hero-area-bg.jpeg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 600px;
+}
+
+.my-picture
+{
+  background: url("../img/bola.jpg") no-repeat center;
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  border: 1px solid red;
+}
 
 
 
