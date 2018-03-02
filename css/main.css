@@ -127,6 +127,73 @@ ul
   padding: 0 1%;
 }
 
+/* ==========================================================================
+      NAVIGATION
+   ========================================================================== */
+nav ul
+{
+  list-style: none;
+  display: block;
+}
+
+nav ul li
+{
+  padding: 10px;
+  border: 1px solid #fff;
+  color: #f5f5f5;
+  cursor: pointer;
+}
+
+@media all and (max-width: 768px)
+{
+
+}
+
+@media all and (min-width: 769px)
+{
+    nav ul li
+  {
+    float: left;
+    margin: 0px 5px;
+    font-size: .78em;
+  }
+
+   nav ul li:first-child
+   {
+      float: right;
+   }
+}
+
+@media all and (min-width: 990px)
+{
+  nav ul li
+  {
+    font-size: 1.1em;
+  }
+}
+
+@media all and (min-width: 1200px)
+{
+  nav ul li
+  {
+    font-size: 1.2em;
+  }
+}
+
+
+
+
+.fixed-header
+{
+  width: 100%;
+  display: block;
+  position: fixed;
+  background-color: rgba(0,0,0,.8);
+  z-index: 1000;
+  border-bottom: 5px solid #1d1f36;
+  padding: 20px 0px;
+}
+
 .hero-area
 {
   background: linear-gradient(rgba(0,0,0,.8) , rgba(0,0,0,.5) , transparent ),
@@ -134,6 +201,8 @@ ul
   background-size: cover;
   background-attachment: fixed;
   height: 600px;
+  margin-top: -20px;
+  text-align: center;
 }
 
 .my-picture
