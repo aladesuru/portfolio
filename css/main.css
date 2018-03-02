@@ -97,6 +97,10 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+<<<<<<< HEAD
+
+
+=======
 *
 {
   box-sizing: border-box;
@@ -213,6 +217,7 @@ nav ul li
   width: 200px;
   border: 1px solid red;
 }
+>>>>>>> 67bdac67c46f61f310140905defee0cbbb74faba
 
 
 
