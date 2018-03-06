@@ -202,7 +202,7 @@ nav ul li:first-child
 .hero-area
 {
   background: linear-gradient(rgba(0,0,0,.8) , rgba(0,0,0,.5) , transparent ),
-              url("../img/hero-area-bg.jpeg") no-repeat center;
+              url("../img/hero-area-bg-2.jpeg") no-repeat center;
   background-size: cover;
   background-attachment: fixed;
   height: 500px;
@@ -273,7 +273,7 @@ nav ul li:first-child
   }
   .name-and-title h1 span
   {
-    font-size: .78em;
+    font-size: .68em;
   }
 }
 
