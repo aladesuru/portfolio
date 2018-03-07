@@ -469,7 +469,16 @@ nav ul li:hover
 /* ==========================================================================
      work Experience
    ========================================================================== */
-
+.float-left
+{
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  margin: 0 5px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  min-height: 600px;
+}
 
 
 
