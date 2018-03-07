@@ -130,6 +130,33 @@ ul
 /* ==========================================================================
       NAVIGATION
    ========================================================================== */
+
+.fixed-header
+{
+  width: 100%;
+  display: block;
+  position: fixed;
+  background-color: rgba(0,0,0,.8);
+  z-index: 1000;
+  /*border-bottom: 5px solid #1d1f36;*/
+  padding: 20px 0px;
+  margin-top: 0;
+
+}
+
+.hamburger
+{
+  color: #fff;
+  text-align: right;
+  margin-right: 10px;
+  font-size: 2em;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 10px;
+  display: none;
+}
+
+
 nav ul
 {
   list-style: none;
@@ -142,14 +169,73 @@ nav ul li
   border: 1px solid #fff;
   color: #f5f5f5;
   cursor: pointer;
+  transition: all .55s ease-out;
 }
-nav ul li:first-child
+.download-resume 
 {
   background-color: #1d1f36;
 }
+.download-resume span
+{
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  padding:  10px;
+  line-height: 7px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all .55s .1s cubic-bezier(.21,-0.17,.58,1.06)
+}
+
+nav ul li:first-child:hover
+{
+  border-color: #1d1f36;
+}
+
+.download-resume:hover span
+{
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+nav ul li:hover
+{
+  background-color: #f5f5f5;
+  color: #1d1f36;
+}
+
 @media all and (max-width: 768px)
 {
+  .hamburger
+  {
+    display: block;
+  }
+  header 
+  {
+    height: 70px;
+  }
+  
+  header nav
+  {
+    opacity: 0;
+    transform: scale(.8) translateX(100%);
+    transition: opacity .55s ease-out , transform .50s cubic-bezier(.21,-0.17,.58,1.06);
+  }
 
+  #hamburger:checked ~ header
+  {
+    height: auto;
+  }
+
+  #hamburger:checked ~ header nav
+  {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
 }
 
 @media all and (min-width: 769px)
@@ -161,7 +247,7 @@ nav ul li:first-child
     font-size: .78em;
   }
 
-   nav ul li:first-child
+   .download-resume
    {
       float: right;
    }
@@ -171,7 +257,7 @@ nav ul li:first-child
 {
   nav ul li
   {
-    font-size: 1.1em;
+    font-size: .8125em;
   }
 }
 
@@ -179,21 +265,10 @@ nav ul li:first-child
 {
   nav ul li
   {
-    font-size: 1.2em;
+    font-size: .875em;
   }
 }
 
-.fixed-header
-{
-  width: 100%;
-  display: block;
-  position: fixed;
-  background-color: rgba(0,0,0,.8);
-  z-index: 1000;
-  /*border-bottom: 5px solid #1d1f36;*/
-  padding: 20px 0px;
-
-}
 
 /* ==========================================================================
       Hero Area
@@ -206,7 +281,7 @@ nav ul li:first-child
   background-size: cover;
   background-attachment: fixed;
   height: 500px;
-  margin-top: -20px;
+  margin-top: -35px;
   text-align: center;
 }
 @media all and (max-width: 768px)
@@ -215,24 +290,39 @@ nav ul li:first-child
   {
     height: 400px;
   }
+
+  .my-picture
+  {
+    height: 200px;
+    width: 200px;
+  }
 }
+
 .my-picture
 {
-  background: url("../img/bola.jpg") no-repeat center 20%;
+  background: url("../img/bola.jpg") no-repeat center 25%;
   background-size: cover;
   height: 300px;
   width: 300px;
   border-radius: 50%;
-  border: 5px solid #1d1f36;
+  border: 10px solid #f5f5f5;
   display: block;
   margin: 0 auto;
+}
+
+@media all and (max-width: 768px)
+{
+  .my-picture
+  {
+    height: 200px;
+    width: 200px;
+  }
 }
 
 .name-and-title h1
 {
   color: #fff;
-  padding-top: 200px;
-  font-size: 1.5em;
+  padding-top: 150px;
   letter-spacing: 1.2px;
   text-shadow: 0 1px 0 #ccc,
               0 2px 0 #c9c9c9,
@@ -253,13 +343,29 @@ nav ul li:first-child
 {
   display: block;
 }
+
+
 @media all and (max-width: 768px)
 {
-  
+  .name-and-title h1
+  {
+    font-size: 2em;
+  }
+  .name-and-title h1 span
+  {
+    font-size: .68em;
+  }
 }
 @media all and (min-width: 769px)
 {
-
+  .name-and-title h1
+  {
+    font-size: 2.5em;
+  }
+  .name-and-title h1 span
+  {
+    font-size: .68em;
+  }
 }
 @media all and (min-width: 990px)
 {
