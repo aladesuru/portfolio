@@ -122,16 +122,34 @@ section
   padding: 0px 1%;
 }
 
+h1{font-size: 1.5em;} h2{font-size: 1.3em;} h3{font-size: 1.1em;} h4{font-size: .97em;}
+
+/*@media all and (max-width: 768px) 
+{
+  
+}
+
+@media all and (min-width: 769px) 
+{
+  
+
+}
+
+@media all and (min-width: 990px) 
+{
+  
+
+}
+
+@media all and (min-width: 1200px) 
+{
+  
+}*/
+
 ul
 {
   margin: 0;
   padding: 0 1%;
-}
-
-
-.work-experience-h3-4
-{
-  color: #666;
 }
 
 .title 
@@ -142,13 +160,13 @@ ul
 {
   color: #4a54c9;
   letter-spacing: 1.2px;
-   margin-bottom: 2px;
+  margin-bottom: 2px;
 }
 .title-hr
 {
-  width: 100px;
+  width: 40px;
   height: 10px;
- background-color: #272b64;
+  background-color: #272b64;
 }
 
 /* ==========================================================================
@@ -467,22 +485,143 @@ nav ul li:hover
 }
 
 /* ==========================================================================
-     work Experience
+     CV arear
    ========================================================================== */
-.float-left
+
+ /* work Experience
+   ======================= */
+.card-container
 {
-  display: inline-block;
-  vertical-align: top;
-  width: 30%;
-  margin: 0 5px;
-  padding: 10px;
+  text-align: center;
+}
+.card
+{
+  margin: 0 1%;
+  padding: 10px 1%;
   background-color: #f5f5f5;
-  min-height: 600px;
+  text-align: left;
+  border-bottom: 5px solid #272b64;
+  border-top: 5px solid #272b64;
+}
+
+.card ul
+{
+  list-style: inside;
 }
 
 
+.card h2,h3,h4
+{
+  margin: 0;
+  padding: 0;
+  margin: 5px 0;
+}
 
+/*.card h2{ background-color: #fff; color: #777;}*/
 
+.card h4
+{
+  margin-top: 15px;
+}
+
+.card h3 span
+{
+  color: #666;
+}
+
+@media all and (max-width: 768px)
+{
+  .card
+  {
+    margin-bottom: 10px;
+  }
+}
+
+@media all and (min-width: 769px)
+{
+  .card
+  {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    min-height: 490px;
+  }
+}
+
+@media all and (min-width: 990px)
+{
+
+}
+
+@media all and (min-width: 1200px)
+{
+  .card
+  {
+    width: 29.3333333%;
+  }
+}
+
+/* Skills
+   ======================= */
+.skill-container
+{
+  background: 
+              url("../img/skill-gb.jpeg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  /*height: 300px;*/
+  width: 100%;
+  margin: 40px 0;
+  text-align: left;
+}
+
+.programming-skill
+{
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(0,0,0, .6);
+}
+
+.skill-bg
+{
+  padding: 20px;
+  color: #fff;
+}
+
+.skill-bg ul
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: block;
+  border: 2px solid #fff;
+  border-top: transparent;
+  border-right: transparent;
+}
+.skill-bg ul li
+{
+  padding: 10px 0;
+  /*background-color: #ddd;*/
+  margin: 5px;
+  color: #fff;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+}
+
+.skills
+{
+  padding: 10px;
+  display: inline-block;
+}
+
+.skill-html{ background-color: #39add1; width: 95%;}
+.skill-css{ background-color: #3079ab; width: 90%;}
+.skill-javascript{ background-color: #c25975; width: 85%;}
+.skill-react{ background-color: #61dafb; width: 60%;}
+.skill-jquery{ background-color: #d18f4f; width: 80%;}
+.skill-php{ background-color: #3f8abf; width: 97%;} 
 
 /* ==========================================================================
    Helper classes
