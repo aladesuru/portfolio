@@ -106,6 +106,8 @@ body
 {
   font-size: 100%;
   font-family: sans-serif , verdana;
+  /*font-family: 'Open Sans', sans-serif; */
+  font-family: 'Roboto Condensed', sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -212,6 +214,8 @@ nav ul li
   color: #f5f5f5;
   cursor: pointer;
   transition: all .55s ease-out;
+  font-weight: bold;
+  letter-spacing: 1.3px;
 }
 
 nav ul li:hover
@@ -599,7 +603,7 @@ nav ul li:hover
 
 .programming-skill
 {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   background-color: rgba(0,0,0, .7);
 }
