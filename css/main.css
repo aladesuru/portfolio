@@ -158,7 +158,7 @@ ul
 }
 .title h1
 {
-  color: #4a54c9;
+  color: #0f61af;
   letter-spacing: 1.2px;
   margin-bottom: 2px;
 }
@@ -166,7 +166,7 @@ ul
 {
   width: 40px;
   height: 10px;
-  background-color: #272b64;
+  background-color:#de4229;
 }
 
 /* ==========================================================================
@@ -221,7 +221,7 @@ nav ul li:hover
 }
 .download-resume 
 {
-  background-color: #4a54c9;
+  background-color: #0f61af;
 }
 .download-resume:hover
 {
@@ -370,9 +370,16 @@ nav ul li:hover
   }
 }
 
+@keyframes slide-up
+{
+  0%{transform: translateY(100%); opacity: 0; transition: opacity  ease-out, transform ;}
+  100%{transform: translateY(0%); opacity: 1;}
+}
+
 .name-and-title h1
 {
   color: #fff;
+  animation: slide-up .55s cubic-bezier(.21,-0.17,.58,1.06);
   padding-top: 150px;
   letter-spacing: 1.2px;
   text-shadow: 0 1px 0 #ccc,
@@ -389,6 +396,7 @@ nav ul li:hover
               0 20px 20px rgba(0,0,0,.35);
 
 }
+
 
 .name-and-title h1 span
 {
@@ -451,8 +459,8 @@ nav ul li:hover
   padding: 20px 2%;
   background-color: #fff;
   font-size: .87em;
-  border: 5px solid #777;
-  border-color:#272b64;
+  border: 3px solid #777;
+  border-color:#0f61af;
   border-radius: 30px 0 30px 0;
   line-height: 25px;
   margin: 10px 0px;
@@ -498,10 +506,13 @@ nav ul li:hover
 {
   margin: 0 1%;
   padding: 10px 1%;
-  background-color: #f5f5f5;
+  /*background-color: #f5f5f5;*/
   text-align: left;
-  border-bottom: 5px solid #272b64;
-  border-top: 5px solid #272b64;
+  border-bottom: 2px solid #272b64;
+  border-top: 2px solid #272b64;
+  border-right: 1px solid #eee;
+  border-left: 1px solid #eee;
+
 }
 
 .card ul
@@ -544,7 +555,7 @@ nav ul li:hover
     display: inline-block;
     vertical-align: top;
     width: 30%;
-    min-height: 490px;
+    min-height: 520px;
   }
 }
 
@@ -563,28 +574,39 @@ nav ul li:hover
 
 /* Skills
    ======================= */
-.skill-container
+#skill-container
 {
   background: 
               url("../img/skill-gb.jpeg") no-repeat center;
   background-size: cover;
   background-attachment: fixed;
-  /*height: 300px;*/
   width: 100%;
   margin: 40px 0;
   text-align: left;
+}
+
+#skill-container h2
+{
+  margin: 0;
+  padding: 0;
+  padding: 10px 5px;
+  color: #f5f5f5;
+  text-align: center;
+  text-shadow: 1px 1px rgba(0,0,0, .7);
+  font-size: 1.8em;
+  font-weight: bolder;
 }
 
 .programming-skill
 {
   width: 80%;
   margin: 0 auto;
-  background-color: rgba(0,0,0, .6);
+  background-color: rgba(0,0,0, .7);
 }
 
 .skill-bg
 {
-  padding: 20px;
+  padding: 10px;
   color: #fff;
 }
 
@@ -601,9 +623,9 @@ nav ul li:hover
 }
 .skill-bg ul li
 {
-  padding: 10px 0;
-  /*background-color: #ddd;*/
-  margin: 5px;
+  padding: 1px 0;
+  background-color: #ddd;
+  margin: 5px 0;
   color: #fff;
   display: block;
   width: 100%;
@@ -612,16 +634,120 @@ nav ul li:hover
 
 .skills
 {
-  padding: 10px;
+  padding: 5px 1px;
   display: inline-block;
 }
 
-.skill-html{ background-color: #39add1; width: 95%;}
-.skill-css{ background-color: #3079ab; width: 90%;}
-.skill-javascript{ background-color: #c25975; width: 85%;}
-.skill-react{ background-color: #61dafb; width: 60%;}
-.skill-jquery{ background-color: #d18f4f; width: 80%;}
-.skill-php{ background-color: #3f8abf; width: 97%;} 
+.skill-php{ background-color: #3f8abf; width: 97%; padding-left: 30%;} 
+.skill-html{ background-color: #39add1; width: 95%; padding-left: 25%;}
+.skill-css{ background-color: #3079ab; width: 90%; padding-left: 20%;}
+.skill-javascript{ background-color: #c25975; width: 85%; padding-left: 15%;}
+.skill-jquery{ background-color: #d18f4f; width: 80%; padding-left: 10%;}
+.skill-react{ background-color: #61dafb; width: 60%; padding-left: 5%;}
+
+
+/* ==========================================================================
+    Project Area
+   ========================================================================== */
+.photo-container
+{
+  margin: 0 1%;
+  text-align: center;
+}
+
+.photo
+{
+ border: 1px solid #eee;
+ position: relative;
+ padding: 10px 1%;
+ margin: 0 10px;
+ transition: transform .56s cubic-bezier(.36,-0.03,.63,1);
+ cursor: pointer;
+}
+.photo:hover
+{
+  transform: scale(1.1);
+}
+
+.photo-overlay a
+{
+  display: block;
+  padding: 10px;
+  background-color: #0f61af;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: box-shadow .40s ease-out;
+}
+
+.photo-overlay a:hover
+{
+  box-shadow: 1px 1px 10px #000;
+}
+
+@media all and (max-width: 768px) 
+{
+  .photo
+  {
+    margin-bottom: 10px;
+  }
+}
+
+@media all and (min-width: 769px) 
+{
+  .photo
+  {
+   display: inline-block; 
+   vertical-align: top;
+   width: 28%;
+   overflow: hidden;
+  }
+
+  .photo-overlay h2
+  {
+    font-size: .98em;
+    color: #fff;
+  }
+  .photo-overlay a
+  {
+    margin: 20px;
+    color: #fff;
+  }
+  .photo-overlay
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, .5);
+    z-index: 100;
+    display: block;
+    color: #fff;
+    opacity: 0;
+    transform: scale(.5);
+    transition: opacity .55s ease-out , transform .55s cubic-bezier(.36,-0.03,.63,1);
+  }
+
+  .photo:hover .photo-overlay
+  {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+@media all and (min-width: 990px) 
+{
+  
+
+}
+
+@media all and (min-width: 1200px) 
+{
+  
+}
+
 
 /* ==========================================================================
    Helper classes
