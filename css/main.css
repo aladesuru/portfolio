@@ -193,7 +193,7 @@ ul
   position: fixed;
   background-color: rgba(0,0,0,.8);
   z-index: 1000;
-  border-bottom: 5px solid #0f61af;
+  /*border-bottom: 5px solid #0f61af;*/
   padding: 20px 0px;
   margin-top: 0;
 
