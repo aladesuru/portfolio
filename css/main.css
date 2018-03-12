@@ -836,7 +836,7 @@ nav ul li:hover
   border-radius: 5px;
   padding: 0px 1%;
   outline: none;
-  border: 2px solid #000;
+  border: 2px solid #ddd;
   background-color: rgba(0,0,0, .4);
   color: #f5f5f5;
 }
@@ -868,26 +868,34 @@ nav ul li:hover
   display: block;
   width: 100%;
   letter-spacing: 1.1px;
-  /*border: 1px solid #666;*/
 }
 .message-me .label
 {
   display: inline-block;
   vertical-align: top;
-  border-top: 3px solid #0f61af;
+  border-top: 3px solid #de4229;
   margin-right: 5px;
   text-align: center;
   background-color: #f5f5f5;
   color: #666;
 }
 
-
 @media all and (max-width: 768px) 
 {
+  #contact .card h2
+  {
+    font-size: 1.4em;
+  }
   #contact .call-me,
   #contact .message-me 
   {
     margin-bottom: 10px;
+  }
+  #contact .message-me 
+  {
+     background-image: linear-gradient(rgba(0,0,0,.89) , transparent); 
+     color: #fff;
+     font-size: 1.2em;
   }
 
   .message-me .label
