@@ -735,7 +735,7 @@ nav ul li:hover
    ========================================================================== */
 #contact .card-container
 {
-  background: 
+  background: linear-gradient(rgba(0,0,0,.8) , rgba(0,0,0,.5)),
               url("../img/contact-bg1.jpg") no-repeat center;
   background-size: cover;
   background-attachment: fixed;
@@ -768,7 +768,7 @@ nav ul li:hover
 #contact .call-me,
 #contact .message-me 
 {
-   background-image: linear-gradient(rgba(0,0,0,.7) , transparent); 
+   background-image: linear-gradient(rgba(0,0,0,.8) , transparent 80%); 
    color: #fff;
    font-size: 1.2em;
 }
@@ -936,23 +936,13 @@ nav ul li:hover
 footer
 {
   background-color: rgba(0,0,0, .8);
-  background-color: #0f61af;
   margin: 50px 0px 0;
   padding: 10px 1%;
-  border-top: 5px solid #272b64;
+  border-top: 5px solid #000;
   color: #fff;
 }
 
-footer ul
-{
-  list-style: none;
-  display: block;
-  padding: 0;
-  margin: 0;
-  /*border: 1px solid green;*/
-}
-
-footer ul li
+#footer .download-resume
 {
   padding: 10px;
   color: #f5f5f5;
@@ -960,70 +950,92 @@ footer ul li
   transition: all .55s ease-out;
   font-weight: bold;
   letter-spacing: 1.3px;
+  margin-bottom: 10px;
 }
 
-.icon:before
+.footer-icon
 {
-  height: 20px;
-  width: 20px;
-  border: 5px solid #0f61af;
+  height: auto;
+  width: 40px;
+  border: 2px solid #0f61af;
   padding: 5px;
+  margin-right: 5px;
   border-radius: 50%;
   display: inline-block;
   vertical-align: middle;
-  content: " ";
-  background-color: #ddd;
-  
+  background-color: #fff;
+  transition: transform .55s ;
 }
 
-.icon-linkdin
+.copyright
 {
-  background: 
-              url("../img/svg/linkedin-logo.svg") no-repeat center;
-  background-size: 20px 20px;
+  color: #777;
 }
-.icon-mobile:before
+
+.copyright span
 {
-  background: 
-              url("../img/svg/mobile.svg") no-repeat center;
-  background-size: 20px 20px;
+  padding: 5px;
 }
-.icon-address:before
+
+.copyright span:last-child
 {
-  background: 
-              url("../img/svg/map-pin-marked.svg") no-repeat center;
-  background-size: 20px 20px;
+  border-left: 2px solid #777;
+  
 }
 
 @media all and (max-width: 768px)
 {
+   footer .download-resume
+   {
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+   }
 
+   .copyright
+    {
+      text-align: center;
+    }
+
+    .footer-icon
+    {
+      width: 50px;
+    }
+    .social-media
+    {
+      margin: 10px 0;
+    }
+    .copyright-socail-container
+    {
+      text-align: center;
+    }
 }
 
 @media all and (min-width: 769px)
 {
-  footer .download-resume
-   {
-      float: left;
-   }
-
-   footer ul li
-   {
-    float: right;
-   }
-
-}
-
-@media all and (min-width: 990px)
-{
-
-}
-
-@media all and (min-width: 1200px)
-{
   
-}
+  .copyright-socail-container
+  {
+    padding: 10px 0;
+  }
 
+  #footer .download-resume
+   {
+      float: none;
+      display: none;
+   }
+
+   #footer .social-media
+   {
+      float: right;
+      margin-top: -10px;
+   }
+
+   .footer-icon:hover
+   {
+      transform: rotate(360deg);
+   }
+}
 
 /* ==========================================================================
    Helper classes
