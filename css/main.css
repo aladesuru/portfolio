@@ -264,6 +264,12 @@ nav ul li:hover
   transition: all .55s .1s cubic-bezier(.21,-0.17,.58,1.06)
 }
 
+ .download-resume a
+{
+  color: #fff;
+  text-decoration: none;
+}
+
 @media all and (max-width: 768px)
 {
   .hamburger
@@ -756,6 +762,12 @@ nav ul li:hover
   border: 1px solid #f5f5f5;
   background-color: #f5f5f5;
   color: #666;
+}
+#contact .call-me a,
+#contact .call-me a[href="tel"]
+{
+  color: #666;
+  text-decoration: none;
 }
 
 .icon:before
