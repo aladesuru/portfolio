@@ -9,7 +9,7 @@
  }
 
 /***********************************************************************************/
-/*		Smoothly scroll to different pages 
+/*		Smoothly scroll to different sections of the page 
 /************************************************************************************/
 let smoothScroll = (element) => {
 
@@ -41,10 +41,10 @@ $("#scrollTocontact").click(() => {
 /************************************************************************************/
 
 let transparentHeader = () => {
-		if ($("body").scrollTop() >= 500) {
+		if ($("body").scrollTop() >= 400) {
 			$("#fixed-header").css("background-color" , "rgba(0,0,0,.8)");
 			$("#fixed-header").css("border-bottom" , "5px solid #000");
-	} else if ($("body").scrollTop() < 500){
+	} else if ($("body").scrollTop() < 400){
 			$("#fixed-header").css("background-color" , "transparent");
 			$("#fixed-header").css("border-bottom" , "none");
 	}
