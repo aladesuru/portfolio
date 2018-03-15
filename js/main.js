@@ -50,7 +50,7 @@ let transparentHeader = () => {
 	}
 }
 
-$( window ).scroll(() => {
+$( "body"  , "html" ).scroll(() => {
 	transparentHeader();
 });
 
