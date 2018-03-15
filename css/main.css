@@ -217,7 +217,6 @@ ul
   display: none;
 }
 
-
 nav ul
 {
   list-style: none;
@@ -346,11 +345,9 @@ nav ul li:hover
   }
 }
 
-
 /* ==========================================================================
       Hero Area
    ========================================================================== */
-
 .hero-area
 {
   background: linear-gradient(rgba(0,0,0,.8) , rgba(0,0,0,.5) , transparent ),
@@ -422,15 +419,12 @@ nav ul li:hover
               0 5px 10px rgba(0,0,0,.25),
               0 10px 10px rgba(0,0,0,.2),
               0 20px 20px rgba(0,0,0,.35);
-
 }
-
 
 .name-and-title h1 span
 {
   display: block;
 }
-
 
 @media all and (max-width: 768px)
 {
@@ -470,12 +464,9 @@ nav ul li:hover
   }
 }
 
-
-
 /* ==========================================================================
      Personal-statement
    ========================================================================== */
-
 .personal-statement
 {
   background-color: #f5f5f5;
@@ -540,7 +531,7 @@ nav ul li:hover
 }
 
 /* Skills
-   ======================= */
+======================= */
 #skill-container
 {
   background: 
@@ -637,7 +628,7 @@ nav ul li:hover
 }
 .photo-overlay p, .photo-overlay h2{ text-align: left; }
 
-#project .photo-overlay h2{ letter-spacing: 1.3px ; font-weight: bold; margin-bottom: 2px}
+#project .photo-overlay h2{ letter-spacing: 1.3px ; font-weight: bold; margin-bottom: 2px }
 
 .photo-overlay a
 {
@@ -737,7 +728,7 @@ nav ul li:hover
   font-size: 1.8em;
   font-weight: bolder;
   text-align: center;
-  border: 5px solid 
+  border: 5px solid ;
   
 }
 
@@ -804,8 +795,7 @@ nav ul li:hover
 }
 
 /* messsage-me
-   ======================= */
-
+======================= */
 .message-me form input,
 .message-me form textarea
 {
@@ -904,7 +894,6 @@ nav ul li:hover
     width: 25%;
   }
 }
-
 
 /* ==========================================================================
    footer Area
