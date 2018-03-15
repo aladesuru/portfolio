@@ -820,7 +820,6 @@ nav ul li:hover
 .message-me form textarea
 {
   height: 70px;
-  width: 70%;
 }
 .message-me form input[type="text"]
 {
@@ -875,9 +874,16 @@ nav ul li:hover
      font-size: 1.2em;
   }
 
+  .message-me form input,
+  .message-me form textarea
+  {
+    width: 70%;
+  }
+
   .message-me .label
   {
-    width: 24%;
+    width: 28%;
+    font-size: .79em;
   }
 }
 
