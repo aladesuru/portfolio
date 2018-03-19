@@ -212,11 +212,12 @@ ul
   margin-right: 10px;
   font-size: 2em;
   cursor: pointer;
-  display: block;
   margin-bottom: 10px;
   display: none;
   float: right;
+  line-height: 40px;
 }
+
 span.menu-icon
 {
   width: 40px;
@@ -302,6 +303,8 @@ nav ul li:hover
   header 
   {
     height: 70px;
+    transition: height .55s;
+
   }
   
   header nav
@@ -313,7 +316,7 @@ nav ul li:hover
 
   #hamburger:checked ~ header
   {
-    height: auto;
+    height: 320px;
   }
 
   #hamburger:checked ~ header nav
