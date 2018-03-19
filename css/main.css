@@ -215,8 +215,30 @@ ul
   display: block;
   margin-bottom: 10px;
   display: none;
+  float: right;
+}
+span.menu-icon
+{
+  width: 40px;
+  display: block;
+  border: 4px solid #fff;
+  margin: 2px 0;
+
 }
 
+/*#menu-icon-first
+{
+  width: 40px;
+}
+#menu-icon-second
+{
+  width: 30px;
+}
+#menu-icon-third
+{
+  width: 20px;
+}
+*/
 nav ul
 {
   list-style: none;
