@@ -41,16 +41,43 @@ $("#scrollTocontact").click(() => {
 /************************************************************************************/
 
 let transparentHeader = () => {
+	if ($("body , html").scrollTop()) {
+			if ($("body , html").scrollTop() > 400) {
+				$("#fixed-header").css("background-color" , "rgba(0,0,0,.8)");
+				$("#fixed-header").css("border-bottom" , "5px solid #000");
+			} 
+			else if ($("body , html").scrollTop() < 400){
+					$("#fixed-header").css("background-color" , "transparent");
+					$("#fixed-header").css("border-bottom" , "none");
+			}
+	} 
+	else if($("body").scrollTop()){
 		if ($("body").scrollTop() > 400) {
-			$("#fixed-header").css("background-color" , "rgba(0,0,0,.8)");
-			$("#fixed-header").css("border-bottom" , "5px solid #000");
-	} else if ($("body").scrollTop() < 400){
-			$("#fixed-header").css("background-color" , "transparent");
-			$("#fixed-header").css("border-bottom" , "none");
+				$("#fixed-header").css("background-color" , "rgba(0,0,0,.8)");
+				$("#fixed-header").css("border-bottom" , "5px solid #000");
+		} 
+		else if ($("body").scrollTop() < 400){
+				$("#fixed-header").css("background-color" , "transparent");
+				$("#fixed-header").css("border-bottom" , "none");
+		}
+
 	}
+		
 }
 
-$( "body"  , "html" ).scroll(() => {
-	transparentHeader();
-});
 
+if ($( document ).scroll()) {
+			$( document ).scroll(() => {
+			transparentHeader();
+		});
+	} 
+	else if($( window ).scroll()){
+			$( window ).scroll(() => {
+			transparentHeader();
+		});
+	}
+
+
+/***********************************************************************************/
+/*		Send email using Ajax and PHP
+/************************************************************************************/
