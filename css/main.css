@@ -212,11 +212,34 @@ ul
   margin-right: 10px;
   font-size: 2em;
   cursor: pointer;
-  display: block;
   margin-bottom: 10px;
   display: none;
+  float: right;
+  line-height: 40px;
 }
 
+span.menu-icon
+{
+  width: 40px;
+  display: block;
+  border: 4px solid #fff;
+  margin: 2px 0;
+
+}
+
+/*#menu-icon-first
+{
+  width: 40px;
+}
+#menu-icon-second
+{
+  width: 30px;
+}
+#menu-icon-third
+{
+  width: 20px;
+}
+*/
 nav ul
 {
   list-style: none;
@@ -280,6 +303,8 @@ nav ul li:hover
   header 
   {
     height: 70px;
+    transition: height .55s;
+
   }
   
   header nav
@@ -291,7 +316,7 @@ nav ul li:hover
 
   #hamburger:checked ~ header
   {
-    height: auto;
+    height: 320px;
   }
 
   #hamburger:checked ~ header nav
