@@ -1,12 +1,12 @@
 //create helper function to use _$ to select element
 
- const _$ = (element) => {
- 	return(document.querySelector(element));
- }
+ // const _$ = (element) => {
+ // 	return(document.querySelector(element));
+ // }
 
- const _bytagName = (tag) => {
- 	return (document.getElementsByTagName(tag));
- }
+ // const _bytagName = (tag) => {
+ // 	return (document.getElementsByTagName(tag));
+ // }
 
 /***********************************************************************************/
 /*		Smoothly scroll to different sections of the page 
@@ -79,3 +79,4 @@ if ($( document ).scroll()) {
 /***********************************************************************************/
 /*		Send email using Ajax and PHP
 /************************************************************************************/
+
