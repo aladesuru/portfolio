@@ -37,7 +37,7 @@ $("#scrollTocontact").click(() => {
 });
 
 /***********************************************************************************/
-/*		Changing header styling
+/*		Changing header styling 
 /************************************************************************************/
 
 let transparentHeader = () => {
@@ -101,10 +101,10 @@ if ($( document ).scroll()) {
 						$("#name-row .invalid-email").text(" Please key in your name. ").slideDown("1000");
 					
 				} else if($("#name").val().trim() !== ""){
-					$("name-row .invalid-email").remove();
+					$("#name-row .invalid-email").slideUp("1000");
 				}
 			}
-	}
+	};
 
 	$("#email").blur(field_validation);
 	$("#name").blur(field_validation);
@@ -130,7 +130,7 @@ $("#email-form").submit( (event) => {
 		$("#form-message").slideUp("1000");
 		$(".thank-you-msg").text("Message sent and thank you for getting in touch").slideDown();
 	}else {
-		$(".thank-you-msg").text("Please fill in all reuired fields.").slideDown();
+		$(".thank-you-msg").text("Please fill in all required fields.").slideDown();
 	}
 	
-})
+});
