@@ -37,7 +37,7 @@ $("#scrollTocontact").click(() => {
 });
 
 /***********************************************************************************/
-/*		Changing header styling
+/*		Changing header styling 
 /************************************************************************************/
 
 let transparentHeader = () => {
@@ -79,6 +79,60 @@ if ($( document ).scroll()) {
 
 
 /***********************************************************************************/
+/*	Form validation when field lose focus
+/************************************************************************************/
+	let $invalid_email = "<p class='invalid-email'></p>";
+
+	$("#email-row").append($invalid_email);
+	$("#name-row").append($invalid_email);
+	$(".invalid-email").hide();
+	
+	let field_validation = (e) => {
+		let pattern = /[\w.]+[@][\w.]/;
+			if (e.target.id === "email") {
+
+				if (!pattern.test($("#email").val())){
+					$("#email-row .invalid-email").text(" Please provide a valid email. ").slideDown("1000");
+					
+				} else if(pattern.test($("#email").val())){
+					$("#email-row .invalid-email").slideUp("1000");
+				}	
+
+			} else if(e.target.id === "name"){
+					if ($("#name").val().trim() === "") {
+						$("#name-row .invalid-email").text(" Please key in your name. ").slideDown("1000");
+					
+				} else if($("#name").val().trim() !== ""){
+					$("#name-row .invalid-email").slideUp("1000");
+				}
+			}
+	};
+
+	$("#email").blur(field_validation);
+	$("#name").blur(field_validation);
+
+
+/***********************************************************************************/
 /*		Send email using Ajax and PHP
 /************************************************************************************/
+// const send_email = () => {
+// 	$Ajax(url , )
+//  /[\w.]+[@][\w.]/;
+// }
 
+let $thank_u_msg = "<div><p class='thank-you-msg'></p></div>";
+
+$("#message-container").append($thank_u_msg);
+$(".thank-you-msg").hide();
+
+$("#email-form").submit( (event) => {
+	event.preventDefault();
+
+	if (($("#email").val() !== "") && ($("#message").val() !== "") ) {
+		$("#form-message").slideUp("1000");
+		$(".thank-you-msg").text("Message sent and thank you for getting in touch").slideDown();
+	}else {
+		$(".thank-you-msg").text("Please fill in all required fields.").slideDown();
+	}
+	
+});
