@@ -37,7 +37,7 @@ $("#scrollTocontact").click(() => {
 });
 
 /***********************************************************************************/
-/*		Changing header styling 
+/*		Changing header styling when the page is scroll 
 /************************************************************************************/
 
 let transparentHeader = () => {
@@ -79,10 +79,10 @@ if ($( document ).scroll()) {
 /***********************************************************************************/
 /*	Form validation when field lose focus
 /************************************************************************************/
-	let $invalid_email = "<p class='invalid-email'></p>";
+	let $field_validation_text = "<p class='invalid-email'></p>";
 
-	$("#email-row").append($invalid_email);
-	$("#name-row").append($invalid_email);
+	$("#email-row").append($field_validation_text);
+	$("#name-row").append($field_validation_text);
 	$(".invalid-email").hide();
 	
 	let field_validation = (e) => {
