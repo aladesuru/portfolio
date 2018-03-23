@@ -16,24 +16,35 @@ let smoothScroll = (element) => {
 	$("body , html").animate({
 		scrollTop: $(element).offset().top - 100
 	} , 1000)
+	
+	$("#scrollTohome , #scrollToresume , #scrollToproject , #scrollTocontact").css("background-color" , "transparent");
+	$("#scrollTohome , #scrollToresume , #scrollToproject , #scrollTocontact").css("color" , "#fff");
 	$("#hamburger").prop("checked" ,false);
 }
 
 $("#scrollTohome").click(() => {
 		smoothScroll("#heroArea");
+		$("#scrollTohome").css("background-color" , "#fff");
+		$("#scrollTohome").css("color" , "#272b64");
 });
 
 $("#scrollToresume").click(() => {
 		smoothScroll("#resume");
+		$("#scrollToresume").css("background-color" , "#fff");
+		$("#scrollToresume").css("color" , "#272b64");
 });
 
 $("#scrollToproject").click(() => {
 		smoothScroll("#project");
+		$("#scrollToproject").css("background-color" , "#fff");
+		$("#scrollToproject").css("color" , "#272b64");
 		
 });
 
 $("#scrollTocontact").click(() => {
 		smoothScroll("#contact");
+		$("#scrollTocontact").css("background-color" , "#fff");
+		$("#scrollTocontact").css("color" , "#272b64");
 });
 
 /***********************************************************************************/
@@ -132,7 +143,7 @@ $("#email-form").submit( (event) => {
 		$("#form-message").slideUp("1000");
 		$(".thank-you-msg").text("Message sent and thank you for getting in touch").slideDown();
 	}else {
-		$(".thank-you-msg").text("Please fill in all required fields.").slideDown();
+		$(".thank-you-msg").text("Please fill in the required fields: Name and Email.").slideDown();
 	}
 	
 });
