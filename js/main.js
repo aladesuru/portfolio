@@ -65,6 +65,7 @@ let transparentHeader = () => {
 		
 }
 
+
 if ($( document ).scroll()) {
 			$( document ).scroll(() => {
 			transparentHeader();
@@ -75,6 +76,7 @@ if ($( document ).scroll()) {
 			transparentHeader();
 		});
 	}
+
 
 /***********************************************************************************/
 /*	Form validation when field lose focus
