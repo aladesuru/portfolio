@@ -27,12 +27,9 @@ let active_link = (element) => {
 		$(element).css("color" , "#272b64");
 };
 
-$("#main-nav").on("click" , "li a[href^='#']" , function(event){
-		event.preventDefault();
-		console.log(event.target);
-});
 
-$("#main-nav").on("click" , "a" , function(event){
+$("#main-nav").on("click" , "li a[href^='#']" , function(event){
+	event.preventDefault();
 	if (event.target.id === "scrollTohome") {
 			smoothScroll("#heroArea");
 			active_link(this);
