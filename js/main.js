@@ -18,7 +18,7 @@ let smoothScroll = (element) => {
 	} , 1000)
 	
 	$("#scrollTohome , #scrollToresume , #scrollToproject , #scrollTocontact").css("background-color" , "transparent");
-	$("#scrollTohome , #scrollToresume , #scrollToproject , #scrollTocontact").css("color" , "#fff");
+	$("#scrollTohome , #scrollToresume , #scrollToproject , #scrollTocontact").css("color" , "#999");
 	$("#hamburger").prop("checked" ,false);
 }
 
@@ -27,8 +27,12 @@ let active_link = (element) => {
 		$(element).css("color" , "#272b64");
 };
 
-$("#main-nav").on("click" , "li" , function(event){
-	
+$("#main-nav").on("click" , "li a[href^='#']" , function(event){
+		event.preventDefault();
+		console.log(event.target);
+});
+
+$("#main-nav").on("click" , "a" , function(event){
 	if (event.target.id === "scrollTohome") {
 			smoothScroll("#heroArea");
 			active_link(this);
