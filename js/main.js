@@ -22,30 +22,32 @@ let smoothScroll = (element) => {
 	$("#hamburger").prop("checked" ,false);
 }
 
-$("#scrollTohome").click(() => {
-		smoothScroll("#heroArea");
-		$("#scrollTohome").css("background-color" , "#fff");
-		$("#scrollTohome").css("color" , "#272b64");
-});
+let active_link = (element) => {
+		$(element).css("background-color" , "#fff");
+		$(element).css("color" , "#272b64");
+};
 
-$("#scrollToresume").click(() => {
-		smoothScroll("#resume");
-		$("#scrollToresume").css("background-color" , "#fff");
-		$("#scrollToresume").css("color" , "#272b64");
-});
+$("#main-nav").on("click" , "li" , function(event){
+	
+	if (event.target.id === "scrollTohome") {
+			smoothScroll("#heroArea");
+			active_link(this);
 
-$("#scrollToproject").click(() => {
-		smoothScroll("#project");
-		$("#scrollToproject").css("background-color" , "#fff");
-		$("#scrollToproject").css("color" , "#272b64");
+	} else if(event.target.id === "scrollToresume"){
+			smoothScroll("#resume");
+			active_link(this);
+
+	}else if(event.target.id === "scrollToproject"){
+			smoothScroll("#project");
+			active_link(this);
+
+	}else if(event.target.id === "scrollTocontact"){
+			smoothScroll("#contact");
+			active_link(this);
+	}
 		
 });
 
-$("#scrollTocontact").click(() => {
-		smoothScroll("#contact");
-		$("#scrollTocontact").css("background-color" , "#fff");
-		$("#scrollTocontact").css("color" , "#272b64");
-});
 
 /***********************************************************************************/
 /*		Changing header styling when the page is scroll 
