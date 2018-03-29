@@ -896,7 +896,7 @@ nav ul li a:hover
 .message-me form textarea
 {
   height: 70px;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 .message-me form input[type="text"],
 .message-me form input[type="email"]
