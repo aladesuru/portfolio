@@ -146,7 +146,12 @@ $("#email-form").submit( (event) => {
 		$("#form-message").slideUp("1000");
 		$(".thank-you-msg").text("Message sent and thank you for getting in touch").slideDown();
 	}else {
-		$(".thank-you-msg").text("Please fill in the required fields: Name and Email.").slideDown();
+		// $(".thank-you-msg").text("Please fill in the required fields: Name and Email.").slideDown();
+		
+		let $url = "http://localhost/portfolio/contact.php";
+		$.get($url , function(data){
+			$(".thank-you-msg").html( data ).slideDown();
+		})
 	}
 	
 });
