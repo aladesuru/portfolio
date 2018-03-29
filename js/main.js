@@ -141,12 +141,28 @@ $(".thank-you-msg").hide();
 
 $("#email-form").submit( (event) => {
 	event.preventDefault();
+	// let $url = $("form#email-form").attr("id");
+	 let $host = location.host;
+	 let $path = location.pathname;
+	 let $url = `http://${$host}${$path}contact.php`;
+	 let $data = $("form#email-form").serialize();
 
-	if (($("#email").val() !== "") && ($("#message").val() !== "") ) {
-		$("#form-message").slideUp("1000");
-		$(".thank-you-msg").text("Message sent and thank you for getting in touch").slideDown();
+
+	if ( ($("#email").val() !== "") && ($("#message").val() !== "") ) {
+		$.post($url , $data , function(respond){
+			$("#form-message").slideUp("1000");
+			$(".thank-you-msg").text( respond ).slideDown();
+		});
 	}else {
 		$(".thank-you-msg").text("Please fill in the required fields: Name and Email.").slideDown();
+
+		
+		//  // $url = encodeURL($url);
+		// $.get( $url , function(data){
+		// 	$(".thank-you-msg").html(data).slideDown();
+		// })
+
+		// console.log($url);
 	}
 	
 });
