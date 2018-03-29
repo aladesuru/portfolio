@@ -28,9 +28,10 @@ if ($name == " " || $email == " ") {
 // }
 
 if (PHPMailer::validateAddress($email)) {
-		$body = $name ."<br />";
-		$body .= $subject ." " . $email . "<br />";
-		$body .= $message;
+		$body = "Name of the sender : ". $name ."<br />";
+		$body .= "Subject of the email : ". $subject ."<br />";
+		$body .= "Email address : ". $email . "<br />";
+		$body .= "<u style='font-size: 14px;'>Reason for the email</u> " ."<br />" .$message;
 
 		$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
@@ -45,9 +46,9 @@ try {
     $mail->Port = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('adebolaaladesuru@googlemail.com', $name);
+    $mail->setFrom('adebolaaladesuru@googlemail.com', 'Adebola Aladesuru');
     $mail->addAddress('adebolaaladesuru@googlemail.com', 'Adebola A');     // Add a recipient
-    $mail->addAddress('adebolaaladesuru@googlemail.com');               // Name is optional
+    // $mail->addAddress('adebolaaladesuru@googlemail.com');               // Name is optional
     $mail->addReplyTo($email, $name);
     // $mail->addCC('cc@example.com');
     // $mail->addBCC('bcc@example.com');
@@ -71,7 +72,6 @@ try {
 else {
 	$respond_text = "Something went wrong please try again";
 }
-
 
 echo $respond_text;
 
