@@ -14,7 +14,13 @@ $respond_text = '';
 		$subject = trim(filter_input(INPUT_POST, "subject" ,  FILTER_SANITIZE_STRING));
 		$message = trim(filter_input(INPUT_POST, "message" ,  FILTER_SANITIZE_STRING));
 
-		// $honey_spam_pot = $_POST["honey_spam_pot"];
+// 		$honey_spam_pot = $_POST["honey_spam_pot"];
+// }
+// else{
+//         $name = trim(filter_input(INPUT_POST, "name" ,  FILTER_SANITIZE_STRING));
+//         $email = trim(filter_input(INPUT_POST, "email" ,  FILTER_SANITIZE_STRING));
+//         $subject = trim(filter_input(INPUT_POST, "subject" ,  FILTER_SANITIZE_STRING));
+//         $message = trim(filter_input(INPUT_POST, "message" ,  FILTER_SANITIZE_STRING));
 // }
 
 if ($name == " " || $email == " ") {

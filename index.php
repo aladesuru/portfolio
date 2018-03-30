@@ -1,46 +1,83 @@
-<!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title><?php echo "Adebola Aladesuru CV" ?></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
-        <!-- Place favicon.ico in the root directory -->
+$respond_text = "<p>Fields with  *  are required</p>";  
 
-        <link rel="stylesheet" type="text/css" href="css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-        <!-- <link href="https://fonts.googleapis.com/css?family=Itim|Open+Sans|Roboto+Condensed" rel="stylesheet"> -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    </head>
-    <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $name = trim(filter_input(INPUT_POST, "name" ,  FILTER_SANITIZE_STRING));
+    $email = trim(filter_input(INPUT_POST, "email" ,  FILTER_SANITIZE_STRING));
+    $subject = trim(filter_input(INPUT_POST, "subject" ,  FILTER_SANITIZE_STRING));
+    $message = trim(filter_input(INPUT_POST, "message" ,  FILTER_SANITIZE_STRING));
 
-        <!-- Add your site or application content here -->
-        <input id="hamburger" type="checkbox" name="" class="hidden" />
-        <header class="fixed-header" id="fixed-header">
-        <label for="hamburger" class="hamburger">
-          <span id="menu-icon-first" class="menu-icon"></span>
-          <span id="menu-icon-second" class="menu-icon"></span>
-          <span id="menu-icon-third" class="menu-icon"></span>
-        </label>
-        <div class="clearfix"></div>
-          <nav>
-            <ul id="main-nav">
-                <li class="download-resume"><a href="doc/adebola-aladesuru-resume.pdf" target="_blank">DOWNLOAD MY FULL RESUME<span> <img src="img/download.png"></span></a></li>
-                <li><a href="#heroArea" id="scrollTohome">Home</a></li>
-                <li><a href="#resume"   id="scrollToresume">Resume</a></li>
-                <li><a href="#project"  id="scrollToproject">Project</a></li>
-                <li><a href="#contact"  id="scrollTocontact">Contact</a></li>
-            </ul>
-          </nav>
-        </header>
+
+    if ($name == '' || $email == ''){
+      $respond_text = '<p>Please fill in the required fields: Name and Email.</p>';
+       // header("location:index.php?status=field-rquired#contact"); 
+    }else{
+        if (PHPMailer::validateAddress($email)){
+        $body = "Name of the sender : ". $name ."<br />";
+        $body .= "Subject of the email : ". $subject ."<br />";
+        $body .= "Email address : ". $email . "<br />";
+        $body .= "<u style='font-size: 18px;'>Reason for the email</u> " ."<br />" .$message;
+
+        $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+      try {
+          //Server settings
+          $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+          $mail->isSMTP();                                      // Set mailer to use SMTP
+          $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+          $mail->SMTPAuth = true;                               // Enable SMTP authentication
+          $mail->Username = "adebolaaladesuru@googlemail.com";                 // SMTP username
+          $mail->Password = 'csrijcmlppbncazq';                           // SMTP password
+          $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+          $mail->Port = 587;                                    // TCP port to connect to
+
+          //Recipients
+          $mail->setFrom('adebolaaladesuru@googlemail.com', 'Adebola Aladesuru');
+          $mail->addAddress('adebolaaladesuru@googlemail.com', 'Adebola A');     // Add a recipient
+          // $mail->addAddress('adebolaaladesuru@googlemail.com');               // Name is optional
+          $mail->addReplyTo($email, $name);
+          // $mail->addCC('cc@example.com');
+          // $mail->addBCC('bcc@example.com');
+
+          // //Attachments
+          // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+          // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+          //Content
+          $mail->isHTML(true);                                  // Set email format to HTML
+          $mail->Subject = $subject;
+          $mail->Body    = $body;
+          $mail->AltBody = $body;
+
+          $mail->send();
+          header("location:index.php?status=thank-you#contact"); 
+          // $respond_text = '<p>Message sent and thank you for getting in touch</p>';
+
+      } catch (Exception $e) {
+          $respond_text = '<p>Message could not be sent. Mailer Error: </p>' . $mail->ErrorInfo;
+        }
+    } 
+    else {
+       $respond_text = '<p>Please provide a valid email address.</p>';
+    }
+
+    }
+    
+}
+
+if (isset($_GET["status"]) && $_GET["status"] == "thank-you") {
+    $respond_text = '<p>Message sent and thank you for getting in touch.</p>';
+}
+
+include("header.php") ;
+
+?>
 
         <section class="hero-area" id="heroArea">
           <div class="name-and-title">
@@ -191,27 +228,27 @@
 
           <div class="card message-me" id="message-container">
             <div id="form-message">
-              <h2>Send me a message</h2>
-              <p>Fields with  *  are required</p>
-              <form id="email-form" method="Post" action="contact.php">
+              <h2 id="thank-you">Send me a message</h2>
+              <?php   echo $respond_text ;  ?>
+              <form id="email-form" method="Post" action="index.php">
                <div id="name-row">
                 <label for="name">
-                  <span class="label">Name <span> * </span> </span><span><input id="name" type="text" name="name" placeholder="Please enter your name"></span>
+                  <span class="label">Name <span> * </span> </span><span><input id="name" type="text" name="name" placeholder="Please enter your name" value="<?php if(isset($name)){ echo $name ; } ?>"></span>
                 </label>
               </div>
-               <div id="email-row"><label for="email"><span class="label">Email <span> *</span> </span><span><input id="email" type="email" name="email" placeholder="Please enter your email"></span></label>
+               <div id="email-row"><label for="email"><span class="label">Email <span> *</span> </span><span><input id="email" type="text" name="email" placeholder="Please enter your email" value="<?php if(isset($email)){ echo $email ; } ?>"></span></label>
                </div>
                <div>
                 <label for="subject">
-                  <span class="label">Subject </span><span ><input id="subject" type="text" name="subject" placeholder="Enter your subject"></span>
+                  <span class="label">Subject </span><span ><input id="subject" type="text" name="subject" placeholder="Enter your subject" value="<?php if(isset($subject)){ echo $subject ; } ?>"></span>
                 </label>
                </div>
                <div>
                 <label for="message">
-                  <span class="label">Message </span><span><textarea id="message" name="message" placeholder="Type your message"></textarea></span>
+                  <span class="label">Message </span><span><textarea id="message" name="message" placeholder="Type your message"> <?php if(isset($email)){ echo $message; } ?> </textarea></span>
                 </label>
                </div>
-               <div class="submit-btn"><input type="submit" name="" value="Send"></div>
+               <div class="submit-btn"><input type="submit" name="submit" value="Send"></div>
               </form>
             </div>
           </div>
@@ -219,36 +256,5 @@
           </div><!-- End of contact -->
       </section>
 
-        <footer id="footer">
-            <div class="download-resume">
-               <a href="doc/adebola-aladesuru-resume.pdf" target="_blank">DOWNLOAD MY FULL RESUME<span> <img src="img/download.png"></span></a>
-            </div>  
-
-            <div class="copyright-socail-container">
-              <div class="social-media">
-                  <a href="https://linkedin.com/in/adebola-aladesuru" target="_blank"><span class="footer-icon"><img src="img/svg/linkedin.png" alt="Linkdln-icon" /></span></a>
-                  <a href="https://github.com/aladesuru" target="_blank"><span class="footer-icon"><img src="img/svg/github.png" alt="Github-icon" /></span></a>
-                  <a href="#"><span class="footer-icon"><img src="img/svg/facebook.png" alt="facebook-icon" /></span></a>
-              </div>
-              
-              <div class="copyright">
-                <span><strong><small>ADEBOLA ALADESURU</small></strong></span>
-                <span><small>Copyright &copy 2014 All right reserved</small></span>
-              </div>
-            </div>   
-        </footer>
-
-        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-        <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-    </body>
-</html>
+<?php include("footer.php") ?>
+       
