@@ -88,7 +88,7 @@ include("header.php") ;
 
         <section class="personal-statement">
             <p class="personal-statement-content">
-                I have a sound IT background and good interpersonal skills, with minimum of three years industry experience, which include administrative task, training, testing, implementing, supporting and managing. My strong background in IT has allowed me to work in all aspect in the IT industries. I possess excellent leadership, communication and team working skills.
+                I have a sound IT background and good interpersonal skills, with minimum of three years industry experience, which includes administrative tasks, training, testing, implementing, supporting and managing. My strong background in IT has allowed me to work in all aspect in the IT industry. I possess excellent leadership, communication and team working skills.
                 <strong><q><i> You need the right people with You , not the best people. </i></q> - Jack Ma</strong>
             </p>
         </section>
