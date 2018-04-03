@@ -191,7 +191,7 @@ include("header.php") ;
                 <p>
                   Application design to manage student record ... CRUD.
                 </p>
-                <a href="#" target="_blank">Click here to view</a>
+                <a href="https://aladesuru.github.io/display_report/" target="_blank">Click here to view</a>
               </div>
             </div>
 
@@ -202,7 +202,7 @@ include("header.php") ;
                 <p>
                   Application use in tracking players score for games.
                 </p>
-                <a href="#" target="_blank">Click here to view</a>
+                <a href="https://aladesuru.github.io/scoreboard-app/" target="_blank">Click here to view</a>
               </div>
             </div>
 
