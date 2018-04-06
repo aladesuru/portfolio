@@ -173,28 +173,6 @@ include("header.php") ;
             </div>
             <div class="card-container">
 
-              <div class="card">
-              <img src="img/project-1.jpeg" alt="online book store" />
-              <div class="photo-overlay">
-                <h2>Online Book Store</h2>
-                <p>
-                  An online book store where user can order and read online application.
-                </p>
-                <a href="#" target="_blank">Click here to view</a>
-              </div>
-            </div>
-
-            <div class="card">
-              <img src="img/project-2.jpeg" alt="student record data management" />
-              <div class="photo-overlay">
-                <h2>Student Record Data Management</h2>
-                <p>
-                  Application design to manage student record ... CRUD.
-                </p>
-                <a href="https://aladesuru.github.io/display_report/" target="_blank">Click here to view</a>
-              </div>
-            </div>
-
             <div class="card">
               <img src="img/project-3.jpeg" alt="Scoreboard Application" />
               <div class="photo-overlay">
@@ -205,6 +183,30 @@ include("header.php") ;
                 <a href="https://aladesuru.github.io/scoreboard-app/" target="_blank">Click here to view</a>
               </div>
             </div>
+
+              <div class="card">
+              <img src="img/project-1.jpeg" alt="online book store" />
+              <div class="photo-overlay">
+                <h2>Organisation Website</h2>
+                <p>
+                 Platform that introduce company services and connect the Landord , Tenant and Agent . Also part of internal tasks are done in the platform.
+                </p>
+                <a href="https://www.ringley.co.uk/" target="_blank">Click here to view</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="img/project-2.jpeg" alt="student record data management" />
+              <div class="photo-overlay">
+                <h2>Student Record Data Management</h2>
+                <p>
+                  Single page application design to handle part of record management.
+                </p>
+                <a href="https://aladesuru.github.io/display_report/" target="_blank">Click here to view</a>
+              </div>
+            </div>
+
+            
 
           </div>
         </div><!-- End of project --> 
